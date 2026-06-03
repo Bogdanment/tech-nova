@@ -1,4 +1,4 @@
-# TechStore
+# Tech Nova
 
 Production-ready full-stack electronics e-commerce store.
 

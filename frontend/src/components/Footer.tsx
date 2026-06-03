@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-7xl px-4 py-12 lg:px-6">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-slate-950">TechNova</h3>
+            <h3 className="text-lg font-semibold text-slate-950">Tech Nova</h3>
             <p className="text-sm text-slate-600">
               Quality electronics for your home and office. Trusted brands, fast shipping, reliable support.
             </p>
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-slate-200 pt-8 text-center text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} TechNova. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Tech Nova. All rights reserved.</p>
         </div>
       </div>
     </footer>

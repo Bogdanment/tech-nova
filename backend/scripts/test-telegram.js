@@ -40,7 +40,7 @@ const telegram = async (method, body) => {
 
   const message = await telegram('sendMessage', {
     chat_id: chatId,
-    text: 'TechNova test notification',
+    text: 'Tech Nova test notification',
   });
   console.log('sendMessage:', message.ok ? 'ok' : `failed (${message.description})`);
 })().catch((error) => {

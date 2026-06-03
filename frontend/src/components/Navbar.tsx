@@ -27,11 +27,9 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 border-b border-white/60 bg-slate-950/85 text-white backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-6">
         <Link to="/" className="flex items-center gap-3">
-          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-cyan-400/15 text-cyan-300 ring-1 ring-cyan-300/20">
-            TN
-          </span>
+          <img src="/logo.svg" alt="Tech Nova" className="h-11 w-11 rounded-2xl ring-1 ring-cyan-300/20" />
           <div>
-            <div className="font-heading text-lg leading-none">TechNova</div>
+            <div className="font-heading text-lg leading-none">Tech Nova</div>
             <div className="text-xs text-slate-400">Computers, peripherals, mobile devices</div>
           </div>
         </Link>

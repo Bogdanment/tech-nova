@@ -54,7 +54,7 @@ const Login = () => {
 
       <div className="surface rounded-[32px] p-8">
         <h2 className="text-3xl font-semibold text-slate-950">Welcome back</h2>
-        <p className="mt-2 text-sm text-slate-500">Log in to the TechNova admin interface.</p>
+        <p className="mt-2 text-sm text-slate-500">Log in to the Tech Nova admin interface.</p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
           <div>
