@@ -4,6 +4,7 @@ import api from '../lib/api';
 import { addToCart } from '../lib/cart';
 import { formatCurrency } from '../lib/format';
 import type { Product } from '../lib/types';
+import ProductImage from '../components/ProductImage';
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -66,9 +67,7 @@ const ProductDetail = () => {
 
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="surface rounded-[32px] p-4 lg:p-5">
-          <div className="overflow-hidden rounded-[24px] bg-slate-100">
-            <img src={images[selectedImage]} alt={product.name} className="h-[420px] w-full object-cover" />
-          </div>
+          <ProductImage src={images[selectedImage]} alt={product.name} className="h-[420px] w-full rounded-[24px]" loading="eager" />
 
           {images.length > 1 && (
             <div className="mt-4 grid grid-cols-4 gap-3">
@@ -81,7 +80,7 @@ const ProductDetail = () => {
                     selectedImage === index ? 'border-cyan-400' : 'border-transparent'
                   }`}
                 >
-                  <img src={image} alt={`${product.name} ${index + 1}`} className="h-24 w-full object-cover" />
+                  <ProductImage src={image} alt={`${product.name} ${index + 1}`} className="h-24 w-full" />
                 </button>
               ))}
             </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ProductImage from '../components/ProductImage';
 import api from '../lib/api';
 import { formatCurrency } from '../lib/format';
 import type { Category, Product } from '../lib/types';
@@ -132,14 +133,13 @@ const Home = () => {
                   to={`/product/${product.slug}`}
                   className="group rounded-[24px] border border-slate-200/80 bg-white p-4 transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg"
                 >
-                  <div className="overflow-hidden rounded-[20px] bg-slate-100">
-                    <img
-                      src={product.images[0] || `https://picsum.photos/seed/${encodeURIComponent(product.slug)}/900/700`}
-                      alt={product.name}
-                      className="h-48 w-full object-cover transition duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
+                  <ProductImage
+                    src={product.images[0] || `https://picsum.photos/seed/${encodeURIComponent(product.slug)}/900/700`}
+                    alt={product.name}
+                    className="h-48 w-full rounded-[20px]"
+                    imageClassName="transition duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
                   <div className="mt-4 flex items-center justify-between gap-3">
                     <div>
                       <h3 className="text-base font-semibold text-slate-950">{product.name}</h3>
@@ -176,10 +176,10 @@ const Home = () => {
                   to={`/product/${product.slug}`}
                   className="flex items-center gap-4 rounded-[22px] border border-slate-200/80 bg-white p-4 transition hover:border-cyan-300 hover:shadow-md"
                 >
-                  <img
+                  <ProductImage
                     src={product.images[0] || `https://picsum.photos/seed/${encodeURIComponent(product.slug)}-thumb/240/240`}
                     alt={product.name}
-                    className="h-20 w-20 rounded-[18px] object-cover"
+                    className="h-20 w-20 shrink-0 rounded-[18px]"
                   />
                   <div className="min-w-0 flex-1">
                     <h3 className="truncate text-base font-semibold text-slate-950">{product.name}</h3>

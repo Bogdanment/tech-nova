@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ProductImage from '../components/ProductImage';
 import { clearCart, getCart, getCartTotals, removeCartItem, updateCartItemQuantity } from '../lib/cart';
 import { formatCurrency } from '../lib/format';
 import type { CartItem } from '../lib/cart';
@@ -59,8 +60,8 @@ const Cart = () => {
         <div className="space-y-4">
           {cart.map((item) => (
             <article key={item.productId} className="surface flex gap-4 rounded-[28px] p-4 lg:p-5">
-              <Link to={`/product/${item.slug}`} className="shrink-0 overflow-hidden rounded-[22px] bg-slate-100">
-                <img src={item.image} alt={item.name} className="h-28 w-28 object-cover" />
+              <Link to={`/product/${item.slug}`} className="shrink-0">
+                <ProductImage src={item.image} alt={item.name} className="h-28 w-28 rounded-[22px]" />
               </Link>
 
               <div className="flex min-w-0 flex-1 flex-col gap-3">

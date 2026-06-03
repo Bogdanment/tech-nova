@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ProductImage from '../components/ProductImage';
 import api from '../lib/api';
 import { clearCart, getCart, getCartTotals } from '../lib/cart';
 import { formatCurrency } from '../lib/format';
@@ -135,7 +136,7 @@ const Checkout = () => {
           <div className="mt-5 space-y-4 max-h-[360px] overflow-auto pr-1">
             {cart.map((item) => (
               <div key={item.productId} className="flex gap-3 rounded-2xl bg-slate-50 p-3">
-                <img src={item.image} alt={item.name} className="h-16 w-16 rounded-xl object-cover" />
+                <ProductImage src={item.image} alt={item.name} className="h-16 w-16 shrink-0 rounded-xl" />
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-sm font-semibold text-slate-950">{item.name}</div>
                   <div className="text-xs text-slate-500">Qty {item.quantity}</div>

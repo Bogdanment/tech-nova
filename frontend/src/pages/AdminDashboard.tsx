@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import ProductImage from '../components/ProductImage';
 import api from '../lib/api';
 import { formatCurrency } from '../lib/format';
 import type { Category, Order, OrderStatus, Product } from '../lib/types';
@@ -463,7 +464,7 @@ const AdminDashboard = () => {
                   <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
                     {productForm.images.map((image) => (
                       <div key={image} className="relative overflow-hidden rounded-2xl bg-slate-100">
-                        <img src={image} alt="Product" className="h-24 w-full object-cover" />
+                        <ProductImage src={image} alt="Product" className="h-24 w-full" />
                         <button
                           type="button"
                           onClick={() => setProductForm({ ...productForm, images: productForm.images.filter((entry) => entry !== image) })}

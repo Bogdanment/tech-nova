@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import api from '../lib/api';
 import { formatCurrency } from '../lib/format';
 import type { Category, Product } from '../lib/types';
+import ProductImage from '../components/ProductImage';
 
 const PRODUCTS_PER_PAGE = 9;
 
@@ -260,11 +261,12 @@ const Catalog = () => {
                 to={`/product/${product.slug}`}
                 className="group surface overflow-hidden rounded-[28px] transition hover:-translate-y-1"
               >
-                <div className="relative overflow-hidden">
-                  <img
+                <div className="relative">
+                  <ProductImage
                     src={product.images[0] || `https://picsum.photos/seed/${encodeURIComponent(product.slug)}/900/700`}
                     alt={product.name}
-                    className="h-56 w-full object-cover transition duration-300 group-hover:scale-105"
+                    className="h-56 w-full"
+                    imageClassName="transition duration-300 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute left-4 top-4 flex gap-2">
