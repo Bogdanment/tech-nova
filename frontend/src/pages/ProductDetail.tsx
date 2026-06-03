@@ -66,8 +66,8 @@ const ProductDetail = () => {
       </Link>
 
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="surface rounded-[32px] p-4 lg:p-5">
-          <ProductImage src={images[selectedImage]} alt={product.name} className="h-[420px] w-full rounded-[24px]" loading="eager" />
+        <div className="surface self-start rounded-[32px] p-4 lg:p-5">
+          <ProductImage src={images[selectedImage]} alt={product.name} className="aspect-[4/3] w-full rounded-[24px]" loading="eager" />
 
           {images.length > 1 && (
             <div className="mt-4 grid grid-cols-4 gap-3">

@@ -12,6 +12,7 @@ export type CartItem = {
 };
 
 const CART_KEY = 'techstore_cart';
+const SHIPPING_PRICE = 10;
 
 const notifyCartChange = () => {
   window.dispatchEvent(new Event('cartchange'));
@@ -37,7 +38,7 @@ export const clearCart = () => {
 
 export const getCartTotals = (cart: CartItem[]) => {
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = subtotal > 0 && subtotal < 150000 ? 490 : 0;
+  const shipping = subtotal > 0 ? SHIPPING_PRICE : 0;
 
   return {
     subtotal,

@@ -4,6 +4,8 @@ import { OrderStatus } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 
+const SHIPPING_PRICE = 10;
+
 @Injectable()
 export class OrdersService {
   constructor(
@@ -75,10 +77,11 @@ export class OrdersService {
       };
     });
 
-    const totalAmount = orderItemData.reduce(
+    const subtotalAmount = orderItemData.reduce(
       (sum, item) => sum + item.price * item.quantity,
       0,
     );
+    const totalAmount = subtotalAmount + SHIPPING_PRICE;
 
     const order = await this.prisma.$transaction(async (tx) => {
       await Promise.all(
@@ -179,6 +182,7 @@ export class OrdersService {
       `Email: ${order.customerEmail}`,
       `Phone: ${order.customerPhone}`,
       `Address: ${order.deliveryAddress}`,
+      `Shipping: $${SHIPPING_PRICE.toFixed(2)}`,
       `Total: $${Number(order.totalAmount).toFixed(2)}`,
       `Status: ${order.status}`,
       '',
